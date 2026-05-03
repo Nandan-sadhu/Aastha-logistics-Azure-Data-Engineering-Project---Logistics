@@ -15,7 +15,7 @@ On-Prem TMS System (Transport Management System database)
 # Logistics Data Engineering Project - End-to-End ELT Pipeline
 
 ## Architecture Diagram
-![Architecture Diagram](Screenshots/Project-Diagram.png)
+![Architecture Diagram](Screeenshots/Architecture-Diagram.png)
 
 Data Sources (CSV | HTTPS | On-Prem TMS | Financial)
         ↓
