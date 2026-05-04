@@ -31,7 +31,6 @@ Gold Layer, Data Modeling (Star Schema), SCD Type 1 & Type 2, Aggregations
 
 Power BI, Reporting, Dashboards, Business Insights
 
----
 
 ## Flow Summary
 
@@ -90,11 +89,31 @@ Built Power BI dashboards for:
       Financial performance tracking
     HR insights
 
-##Data
+## Data
 3 types of data
 1. Ms SQL server- TMS data (onprem) HR, Operational data, financial
-2. csv files- daily details frovided by site supervisor by csv files
+2. csv files- daily details Provided by site supervisor by csv files
 3. API HTTPS- website live data, IOT data
+
+## data Orchestration and how data flow
+data is extracted from multiple source using Azure data factory and moved to data bronze layer directly without any transformation, 
+Need 
+a. linked services
+b. IR- Self hosted (onprem), Auto resolve (Default Azure IR)
+c. source- All diffent sources
+d. Target- Bronze container
+
+How the data is moved to bronze layer
+      1. Onprem data is implemeted using CDC, incremtal load
+      2. csv files Metadata based pipeline, selecting specific container and  event based trigger
+      3. API calls, we are getting multiple small files, impliment batch processing on a 30 minutes batch due           to small file problem, use watermark based incrmental data load
+
+Now we extract the data from bronze, Clean and tranform the data, optimize the pipeline move to silver layer parque file to reduce storage cost.
+use ADF for pipeline contol flow and use databricks noteooks for transformations and cleaning.
+(alternate we can also use auto loader, merge logic)
+
+Now the data is clean and standardized in silver layer its time to move the data to gold layer. The data is extracted by Merge logic (upsert incemental ) and converted to fact and dimention tales, implement scd-1, scd-2
+where needed finally store to the desired gold layer locations in delta tables.
 
 
 ## Key Features
