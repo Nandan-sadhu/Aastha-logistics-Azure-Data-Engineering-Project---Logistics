@@ -88,7 +88,14 @@ Cost prediction
 Built Power BI dashboards for:
       Real-time operational monitoring
       Financial performance tracking
-      HR insights
+    HR insights
+
+##Data
+3 types of data
+1. Ms SQL server- TMS data (onprem) HR, Operational data, financial
+2. csv files- daily details frovided by site supervisor by csv files
+3. API HTTPS- website live data, IOT data
+
 
 ## Key Features
 Multi-source data integration
