@@ -17,20 +17,6 @@ On-Prem TMS System (Transport Management System database)
 ## Architecture Diagram
 ![Architecture Diagram](Screeenshots/Architecture-Diagram.png)
 
-Data Sources (CSV | HTTPS | On-Prem TMS | Financial)
-
-Azure Data Factory (Ingestion), Incremental Load, CDC (Change Data Capture), Watermark Logic
-
-Raw Layer (Bronze - ADLS), Raw, unprocessed data, Historical storage
-
-ADF + Databricks (Incremental Processing), Trigger Databricks Notebooks, Incremental transformations
-
-Silver Layer, Data cleaning, Standardization, Joins
-
-Gold Layer, Data Modeling (Star Schema), SCD Type 1 & Type 2, Aggregations
-
-Power BI, Reporting, Dashboards, Business Insights
-
 
 ## Flow Summary
 
